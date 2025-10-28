@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed from center to flex-start */
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+#root{
+  font-family: 'Questrial', sans-serif;
+  width: 100%; /* Add this to prevent horizontal shifting */
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search-controls {
+  width: 600px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%; /* Changed from 600px to 100% to use parent width */
+}
+
+.search-input {
+  border-radius: 0.5rem;
+  border: 2px solid rgb(0, 0, 0);
+  flex-grow: 1;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.search-input:focus::placeholder {
+  color: transparent;
+}
+
+.post-dropdown {
+  width: 100%; /* Use parent width instead of fixed 600px */
+}
+
+.post-dropdown select {
+  width: 100%; 
+  padding: 0.5rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.all-posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Changed from center */
+  max-width: 800px;
+  width: 80%;
+  min-height: 400px;
+}
+
+.post {
+  padding: 10px;
+  max-width: 150px;
+  text-align: center;
+  border: 1px solid;
+  margin: 1rem; 
+  align-items: center;
+  box-shadow: 2px 4px 10px hsla(0, 0%, 0%, 0.3),
+    2px 4px 20px hsla(0, 0%, 0%, 0.2);
+}
+
+.post-topic {
+  font-weight: bold;
+  font-size: large;
+  margin: 5px;
+}
+
+.post-title {
+  margin: 5px;
+}
