@@ -4,7 +4,7 @@ import { getPostById } from "../../services/postService"
 import "./AllPosts.css"
 
 
-export const PostDetails = () => {
+export const PostDetails = ( {currentUser}) => {
 
     const [ post, setPost ] = useState({})
     const { id } = useParams()
@@ -43,6 +43,24 @@ export const PostDetails = () => {
                 <span className="post-topic">Number of Likes:</span>
                 {post?.likes}
             </div>
+            <div className="btn-container" >
+                {/* If the logged in user is the user who made the post then an edit button should appear */}
+
+                { post.userId === currentUser.id ? (<button>Edit</button>) : (
+                    ""
+                    )}
+
+
+
+            {/* If the logged in user is NOT the user who made the post then a "like" button should appear */}
+
+                {post.userId != currentUser.id ? (<button>Like</button> ): (
+                    ""
+                    )}
+
+        </div>
+
+
         
         </section>
     )

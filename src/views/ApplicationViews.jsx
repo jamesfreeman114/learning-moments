@@ -28,7 +28,7 @@ useEffect(() => {
                 }
             >
                 <Route index element= {<AllPosts />} />
-                <Route path=":id" element = {<PostDetails />} />
+                <Route path=":id" element = {<PostDetails currentUser={currentUser}/>} />
 
                
             </Route>
