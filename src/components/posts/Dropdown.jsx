@@ -1,26 +1,26 @@
-export const DropdownMenu = ( {setTopicName, allTopics}) => {
+export const DropdownMenu = ({ setTopicName, allTopics }) => {
     return (
         <div className="post-dropdown">
-                    <select
-                        onChange={(event) => {
-                            setTopicName(event.target.value)
-                        }}
+            <select
+                onChange={(event) => {
+                    setTopicName(event.target.value)
+                }}
 
-                    >
-                        {allTopics.map((topic) => {
-                            return (
-                                <option
-                                    className="post-option"
-                                    key={topic.id}
-                                >
-                                    {topic.name}
+            >
+                {allTopics.map((topic) => {
+                    return (
+                        <option
+                            className="post-option"
+                            key={topic.id}
+                        >
+                            {topic.name}
 
-                                </option>
-                            )
-                        })}
+                        </option>
+                    )
+                })}
 
 
-                    </select>
-                </div>
+            </select>
+        </div>
     )
 }
