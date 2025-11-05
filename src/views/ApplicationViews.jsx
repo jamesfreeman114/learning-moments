@@ -2,6 +2,7 @@ import { Route, Routes, Outlet } from "react-router-dom"
 import { AllPosts } from "../components/posts/AllPosts"
 import { NavBar } from "../components/nav/NavBar"
 import { useState, useEffect } from "react"
+import { PostDetails } from "../components/posts/PostDetails"
 
 
 export const ApplicationViews = () => {
@@ -27,6 +28,9 @@ useEffect(() => {
                 }
             >
                 <Route index element= {<AllPosts />} />
+                <Route path=":id" element = {<PostDetails />} />
+
+               
             </Route>
         </Routes>
     )

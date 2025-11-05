@@ -5,6 +5,7 @@ import "./AllPosts.css"
 import { Post } from "./Post"
 import { SearchBar } from "./SearchBar"
 import { DropdownMenu } from "./Dropdown"
+import { Link } from "react-router-dom"
 
 
 export const AllPosts = () => {
@@ -60,7 +61,9 @@ export const AllPosts = () => {
 
            <section className="all-posts">
                 {filteredPosts.map((postObj) => {
-                    return < Post postObj={postObj} key={postObj.id} />
+                    return <Link to={`${postObj.id}`} key={postObj.id}>
+                    < Post postObj={postObj}  />
+                    </Link>
                 })}
             </section>
         </div>
