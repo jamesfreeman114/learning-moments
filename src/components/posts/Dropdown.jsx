@@ -1,9 +1,10 @@
-export const DropdownMenu = ({ setTopicName, allTopics }) => {
+export const DropdownMenu = ({ setTopicName, allTopics,}) => {
     return (
         <div className="post-dropdown">
             <select
                 onChange={(event) => {
                     setTopicName(event.target.value)
+                    
                 }}
 
             >
@@ -24,3 +25,4 @@ export const DropdownMenu = ({ setTopicName, allTopics }) => {
         </div>
     )
 }
+

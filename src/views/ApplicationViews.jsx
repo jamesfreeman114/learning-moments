@@ -3,6 +3,7 @@ import { AllPosts } from "../components/posts/AllPosts"
 import { NavBar } from "../components/nav/NavBar"
 import { useState, useEffect } from "react"
 import { PostDetails } from "../components/posts/PostDetails"
+import { NewPostForm } from "../components/forms/NewPostForm"
 
 
 export const ApplicationViews = () => {
@@ -29,6 +30,7 @@ useEffect(() => {
             >
                 <Route index element= {<AllPosts />} />
                 <Route path=":id" element = {<PostDetails currentUser={currentUser}/>} />
+                <Route path="new" element = {<NewPostForm />}/>
 
                
             </Route>

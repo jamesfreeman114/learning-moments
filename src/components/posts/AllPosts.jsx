@@ -15,6 +15,7 @@ export const AllPosts = () => {
     const [filteredPosts, setFilteredPosts] = useState([])
     const [allTopics, setAllTopics] = useState([])
     const [topicName, setTopicName] = useState('')
+    const [topicId, setTopicId] = useState([])
 
     useEffect(() => {
         const foundPost = Posts.filter((post) => {

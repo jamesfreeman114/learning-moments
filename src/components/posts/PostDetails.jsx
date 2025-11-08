@@ -25,7 +25,7 @@ export const PostDetails = ( {currentUser}) => {
             </div>
             <div>
                 <span className="post-topic">Topic:</span>
-                {post.topic?.name}
+                {post?.topic?.name}
             </div>
             <div>
                 <span className="post-topic">Author:</span>
@@ -44,7 +44,7 @@ export const PostDetails = ( {currentUser}) => {
                 {post?.likes}
             </div>
             <div className="btn-container" >
-                {/* If the logged in user is the user who made the post then an edit button should appear */}
+                {/* If the logged in user is the user who made the post then an edit button should appear. This will later navigate to the Edit Post View */}
 
                 { post.userId === currentUser.id ? (<button>Edit</button>) : (
                     ""
@@ -52,7 +52,7 @@ export const PostDetails = ( {currentUser}) => {
 
 
 
-            {/* If the logged in user is NOT the user who made the post then a "like" button should appear */}
+            {/* If the logged in user is NOT the user who made the post then a "like" button should appear This will later on update the number of likes on the post in the database using a PUT method and then navigate to the Favorites View*/}
 
                 {post.userId != currentUser.id ? (<button>Like</button> ): (
                     ""
