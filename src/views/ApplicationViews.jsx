@@ -4,7 +4,7 @@ import { NavBar } from "../components/nav/NavBar"
 import { useState, useEffect } from "react"
 import { PostDetails } from "../components/posts/PostDetails"
 import { NewPostForm } from "../components/forms/NewPostForm"
-
+import { MyPosts } from "../components/posts/MyPosts"
 
 export const ApplicationViews = () => {
 
@@ -31,7 +31,7 @@ useEffect(() => {
                 <Route index element= {<AllPosts />} />
                 <Route path=":id" element = {<PostDetails currentUser={currentUser}/>} />
                 <Route path="new" element = {<NewPostForm />}/>
-
+                <Route path="MyPosts" element = {<MyPosts currentUser={currentUser}/>}/>
                
             </Route>
         </Routes>

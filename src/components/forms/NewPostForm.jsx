@@ -49,7 +49,7 @@ export const NewPostForm = () => {
 
 
         createPost(newPost).then(() => {
-            navigate(`/`)
+            navigate(`/MyPosts`)
         })
     }
 
