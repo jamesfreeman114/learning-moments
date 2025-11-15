@@ -15,7 +15,12 @@ export const AllPosts = () => {
     const [filteredPosts, setFilteredPosts] = useState([])
     const [allTopics, setAllTopics] = useState([])
     const [topicName, setTopicName] = useState('')
-    const [topicId, setTopicId] = useState([])
+
+    const getAndSetPosts = () => {
+        getAllPosts().then(allPosts => {
+                setPosts(allPosts)
+            })
+    }
 
     useEffect(() => {
         const foundPost = Posts.filter((post) => {
@@ -37,10 +42,10 @@ export const AllPosts = () => {
     }, [Posts, topicName])
 
     useEffect(() => {
-        getAllPosts().then(postArr => {
-            setPosts(postArr)
-        })
+        getAndSetPosts()
+       
     }, [])
+
 
     useEffect(() => {
         getAllTopics().then(topicArr => {

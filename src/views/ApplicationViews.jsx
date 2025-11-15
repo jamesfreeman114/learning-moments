@@ -5,10 +5,13 @@ import { useState, useEffect } from "react"
 import { PostDetails } from "../components/posts/PostDetails"
 import { NewPostForm } from "../components/forms/NewPostForm"
 import { MyPosts } from "../components/posts/MyPosts"
+import { EditPost } from "../components/posts/EditPost"
+
 
 export const ApplicationViews = () => {
 
-    const [currentUser, setCurrentUser] = useState({})
+const [currentUser, setCurrentUser] = useState({})
+
 
 useEffect(() => {
   const localLearningUser = localStorage.getItem("learning_user")
@@ -30,8 +33,10 @@ useEffect(() => {
             >
                 <Route index element= {<AllPosts />} />
                 <Route path=":id" element = {<PostDetails currentUser={currentUser}/>} />
-                <Route path="new" element = {<NewPostForm />}/>
-                <Route path="MyPosts" element = {<MyPosts currentUser={currentUser}/>}/>
+                <Route path="new-posts" element = {<NewPostForm />}/>
+                
+                <Route path="my-posts" element = {<MyPosts currentUser={currentUser}/>}/>
+                <Route path=":id/edit-post" element = { <EditPost currentUser={currentUser} />}/>
                
             </Route>
         </Routes>

@@ -2,37 +2,30 @@ import { useState, useEffect } from "react"
 import { getAllPosts } from "../../services/postService"
 import { deletePost } from "../../services/postService"
 import { Link } from "react-router-dom"
+import "./AllPosts.css"
 
 export const MyPosts = ({ currentUser }) => {
 
-
-    const [user, setUser] = useState()
     const [posts, setPosts] = useState([])
     const [filteredPosts, setFilteredPosts] = useState([])
 
     const userId = currentUser.id
 
+    const getAndSetPosts = () => {
+        getAllPosts().then(allPosts => {
+            setPosts(allPosts)
+        })
+    }
+
     const handleClick = (postId) => {
         deletePost(postId).then(() => {
-            getAllPosts().then(allPosts => {
-                setPosts(allPosts)
-            })
-
+            getAndSetPosts()
         })
-
     }
 
 
     useEffect(() => {
-        const localLearningUser = localStorage.getItem("learning_user")
-        const learningUserObject = JSON.parse(localLearningUser)
-        setUser(learningUserObject)
-    }, [])
-
-    useEffect(() => {
-        getAllPosts().then(allPosts =>
-            setPosts(allPosts)
-        )
+        getAndSetPosts()
     }, [])
 
     useEffect(() => {
@@ -41,23 +34,31 @@ export const MyPosts = ({ currentUser }) => {
     }, [posts, userId])
 
     return (
-        <section className="MyPosts">
+        <section className="container">
             <h2>My Posts</h2>
             <div className="user-post">
-                {filteredPosts.map((postObj) => {
-                    return (
+                <ul>
+                    {filteredPosts.map((postObj) => {
+                        return (
 
-                        <li key={postObj.id}>
-                            <Link to={`/${postObj.id}`}>
-                                {postObj.title}
-                            </Link>
-                            <button onClick={() => handleClick(postObj.id)}>
-                                Delete
-                            </button>
-                        </li>
+                            <li key={postObj.id}
+                                className="my-post"
+                            >
+                                <Link
+                                    className="my-post-topic"
+                                    to={`/${postObj.id}`}>
+                                    {postObj.title}
+                                </Link>
+                                <button
+                                    className="my-post-btn-primary"
+                                    onClick={() => handleClick(postObj.id)}>
+                                    Delete
+                                </button>
+                            </li>
 
-                    )
-                })}
+                        )
+                    })}
+                </ul>
             </div>
         </section>
     )

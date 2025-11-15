@@ -1,3 +1,5 @@
+import "./AllPosts.css"
+
 export const Post = ({ postObj }) => {
     return (
         <div className="post">

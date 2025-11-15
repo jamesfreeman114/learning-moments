@@ -7,7 +7,10 @@ import { ApplicationViews } from "./views/ApplicationViews"
 
 export const App = () => {
 
-  return (<Routes>
+  return (
+
+  
+  <Routes>
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="*" element={
