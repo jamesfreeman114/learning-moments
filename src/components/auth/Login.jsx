@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-// import "./Login.css"
+import "./Login.css"
 import { getUserByEmail } from "../../services/userService"
 
 export const Login = () => {
-  const [email, set] = useState("")
+  const [email, set] = useState("eddyN@gmail.com")
   const navigate = useNavigate()
 
   const handleLogin = (e) => {
@@ -41,7 +41,7 @@ export const Login = () => {
                 value={email}
                 className="auth-form-input"
                 onChange={(evt) => set(evt.target.value)}
-                placeholder="Email address"
+                placeholder="Email Address"
                 required
                 autoFocus
               />
