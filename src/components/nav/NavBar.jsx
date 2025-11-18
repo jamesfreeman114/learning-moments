@@ -18,6 +18,10 @@ export const NavBar = () => {
                 <Link className="navbar-link" to='/my-posts'>My Posts</Link>
 
             </li>
+            <li className="navbar-item">
+                <Link className="navbar-link" to='/favorites'>Favorites</Link>
+
+            </li>
             {localStorage.getItem("learning_user") ? (
                 <li className="navbar-item navbar-logout">
                     <Link

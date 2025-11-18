@@ -6,6 +6,7 @@ import { PostDetails } from "../components/posts/PostDetails"
 import { NewPostForm } from "../components/forms/NewPostForm"
 import { MyPosts } from "../components/posts/MyPosts"
 import { EditPost } from "../components/posts/EditPost"
+import { Favorites } from "../components/posts/FavoritePosts"
 
 
 export const ApplicationViews = () => {
@@ -37,6 +38,7 @@ useEffect(() => {
                 
                 <Route path="my-posts" element = {<MyPosts currentUser={currentUser}/>}/>
                 <Route path=":id/edit-post" element = { <EditPost currentUser={currentUser} />}/>
+                <Route path="favorites" element = {<Favorites currentUser={currentUser}/>} />
                
             </Route>
         </Routes>
