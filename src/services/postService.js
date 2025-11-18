@@ -36,3 +36,14 @@ export const editPost = (post) => {
     body: JSON.stringify(post) 
   }).then((res) => res.json())
 }
+
+export const likePost = (newPost) => {
+
+  return fetch("http://localhost:8088/userPostLikes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPost),
+  }).then((res) => res.json())
+}
