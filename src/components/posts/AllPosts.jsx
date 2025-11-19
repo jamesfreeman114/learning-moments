@@ -67,7 +67,7 @@ export const AllPosts = () => {
 
            <section className="all-posts">
                 {filteredPosts.map((postObj) => {
-                    return <Link to={`${postObj.id}`} key={postObj.id}>
+                    return <Link to={`post/${postObj.id}`} key={postObj.id}>
                     < Post postObj={postObj}  />
                     </Link>
                 })}

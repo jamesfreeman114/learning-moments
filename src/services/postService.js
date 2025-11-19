@@ -5,6 +5,7 @@ export const getAllPosts = () => {
 
 export const getPostById = (id) => {
     return fetch (`http://localhost:8088/posts/${id}?_expand=user&_expand=topic`).then((res) => res.json())
+
 }
 
 export const createPost = (newPost) => {
