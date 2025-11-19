@@ -7,6 +7,7 @@ import { NewPostForm } from "../components/forms/NewPostForm"
 import { MyPosts } from "../components/posts/MyPosts"
 import { EditPost } from "../components/posts/EditPost"
 import { Favorites } from "../components/posts/FavoritePosts"
+import { MyProfile } from "../components/users/MyProfile"
 
 
 export const ApplicationViews = () => {
@@ -26,19 +27,23 @@ export const ApplicationViews = () => {
                 path="/"
                 element={
                     <>
-                        <NavBar />
+                        <NavBar currentUser={currentUser}/>
                         <Outlet />
                     </>
 
                 }
             >
                 <Route index element={<AllPosts />} />
-                <Route path=":id" element={<PostDetails currentUser={currentUser} />} />
+                <Route path="post/:id" element={<PostDetails currentUser={currentUser} />} />
                 <Route path="new-posts" element={<NewPostForm />} />
 
                 <Route path="my-posts" element={<MyPosts currentUser={currentUser} />} />
                 <Route path=":id/edit-post" element={<EditPost currentUser={currentUser} />} />
                 <Route path="favorites" element={<Favorites currentUser={currentUser} />} />
+                <Route path="profile/:id">
+                    <Route index element={< MyProfile />} />
+                    
+                </Route> 
 
             </Route>
         </Routes>

@@ -2,7 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css"
 
 
-export const NavBar = () => {
+export const NavBar = ( {currentUser}) => {
+
+    const currentUserId = currentUser.id
 
     const navigate = useNavigate()
 
@@ -20,6 +22,10 @@ export const NavBar = () => {
             </li>
             <li className="navbar-item">
                 <Link className="navbar-link" to='/favorites'>Favorites</Link>
+
+            </li>
+            <li className="navbar-item">
+                <Link className="navbar-link" to={`profile/${currentUserId}`}>Profile</Link>
 
             </li>
             {localStorage.getItem("learning_user") ? (
