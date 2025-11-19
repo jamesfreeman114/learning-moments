@@ -46,7 +46,7 @@ export const MyPosts = ({ currentUser }) => {
                             >
                                 <Link
                                     className="my-post-topic"
-                                    to={`/${postObj.id}`}>
+                                    to={`../post/${postObj.id}`}>
                                     {postObj.title}
                                 </Link>
                                 <button

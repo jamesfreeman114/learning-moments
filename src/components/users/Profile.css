@@ -229,3 +229,8 @@ body {
   text-decoration: none;
   margin: 5px;
 }
+
+.user-heading {
+  font-size: x-large;
+  margin: 20px 0px;
+}

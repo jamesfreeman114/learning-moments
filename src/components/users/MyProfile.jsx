@@ -26,9 +26,23 @@ export const MyProfile =  ( ) => {
  
 
     return ( <section className="container">
-            <div>{user?.name}</div>
-            <div>{user?.email}</div>
-            <div>{user?.cohort}</div>
-            <div>{posts?.length}</div>
+            <h2 className="user-heading">User Profile</h2>
+            <div>
+                <span className="post-topic">Name: </span>
+                {user?.name}
+            </div>
+            <div>
+                <span className="post-topic">Email: </span>
+                {user?.email}
+            </div>
+            <div>
+                <span className="post-topic">Cohort: </span>
+                {user?.cohort}
+            </div>
+            <div>
+                <span className="post-topic">Total Posts: </span>
+                {posts?.length}
+            </div>
+          
             </section>)
 }
