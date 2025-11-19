@@ -11,35 +11,35 @@ import { Favorites } from "../components/posts/FavoritePosts"
 
 export const ApplicationViews = () => {
 
-const [currentUser, setCurrentUser] = useState({})
+    const [currentUser, setCurrentUser] = useState({})
 
 
-useEffect(() => {
-  const localLearningUser = localStorage.getItem("learning_user")
-  const learningUserObject = JSON.parse(localLearningUser)
-  setCurrentUser(learningUserObject)
-}, [])
+    useEffect(() => {
+        const localLearningUser = localStorage.getItem("learning_user")
+        const learningUserObject = JSON.parse(localLearningUser)
+        setCurrentUser(learningUserObject)
+    }, [])
 
-    return(
+    return (
         <Routes>
-            <Route 
+            <Route
                 path="/"
                 element={
-                   <>
-                    <NavBar />
-                    <Outlet />
-                   </>  
-                    
+                    <>
+                        <NavBar />
+                        <Outlet />
+                    </>
+
                 }
             >
-                <Route index element= {<AllPosts />} />
-                <Route path=":id" element = {<PostDetails currentUser={currentUser}/>} />
-                <Route path="new-posts" element = {<NewPostForm />}/>
-                
-                <Route path="my-posts" element = {<MyPosts currentUser={currentUser}/>}/>
-                <Route path=":id/edit-post" element = { <EditPost currentUser={currentUser} />}/>
-                <Route path="favorites" element = {<Favorites currentUser={currentUser}/>} />
-               
+                <Route index element={<AllPosts />} />
+                <Route path=":id" element={<PostDetails currentUser={currentUser} />} />
+                <Route path="new-posts" element={<NewPostForm />} />
+
+                <Route path="my-posts" element={<MyPosts currentUser={currentUser} />} />
+                <Route path=":id/edit-post" element={<EditPost currentUser={currentUser} />} />
+                <Route path="favorites" element={<Favorites currentUser={currentUser} />} />
+
             </Route>
         </Routes>
     )
