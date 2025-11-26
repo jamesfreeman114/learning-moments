@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getUserById } from "../../services/userService"
 import "./Profile.css"
 import { getAllPosts } from "../../services/postService"
 
 export const MyProfile =  ( ) => {
+
+    const navigate = useNavigate()
 
     const {id} = useParams()
 
@@ -42,6 +44,12 @@ export const MyProfile =  ( ) => {
             <div>
                 <span className="post-topic">Total Posts: </span>
                 {posts?.length}
+            </div>
+            <div>
+                <button className="btn-primary"
+                        onClick={()=>{navigate(`edit`)}}>
+                        Edit
+                </button>
             </div>
           
             </section>)

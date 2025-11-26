@@ -8,6 +8,7 @@ import { MyPosts } from "../components/posts/MyPosts"
 import { EditPost } from "../components/posts/EditPost"
 import { Favorites } from "../components/posts/FavoritePosts"
 import { MyProfile } from "../components/users/MyProfile"
+import { EditProfile } from "../components/users/EditProfile"
 
 
 export const ApplicationViews = () => {
@@ -42,6 +43,7 @@ export const ApplicationViews = () => {
                 <Route path="favorites" element={<Favorites currentUser={currentUser} />} />
                 <Route path="profile/:id">
                     <Route index element={< MyProfile />} />
+                    <Route path="edit" element={<EditProfile/>} />
                     
                 </Route> 
 
